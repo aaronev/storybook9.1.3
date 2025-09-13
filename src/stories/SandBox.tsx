@@ -9,7 +9,8 @@ export const SandBox = ({
   backgroundColor,
   label,
   ...props
-}: ButtonProps) => {
+}) => {
+
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
 
   React.useEffect(() => {
