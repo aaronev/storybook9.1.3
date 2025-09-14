@@ -42,7 +42,7 @@ export const Table = ({
   };
 
   return (
-    <div>
+    <div class={selectable ? 'selectable-table': ''}>
       <div class="toolbar">
         <span ref={announceRef} class="visually-hidden" aria-live="polite"></span>
         {

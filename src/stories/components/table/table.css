@@ -22,16 +22,16 @@ td, th {
   display: flex;
 }
 
-tr.selected {
+.selectable-table tr.selected {
   background-color: lightgray;
 }
 
-tbody tr:hover {
+.selectable-table tbody tr:hover {
   background-color: rgb(228, 219, 219);
   cursor: pointer;
 }
 
-tbody tr.disabled:hover {
+.selectable-table tbody tr.disabled:hover {
   cursor: not-allowed;
   pointer-events: all !important;
 }
