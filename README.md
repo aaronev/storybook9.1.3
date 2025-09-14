@@ -1,4 +1,63 @@
-# React + TypeScript + Vite
+# Getting Started
+
+## Clone Repository
+
+```git clone https://github.com/aaronev/storybook9.1.3.git```
+
+Full Disclosure: 
+
+This comes with the assumption that the person cloning the application understands git, node, npm, react, typescript, storybook, and command line.
+
+If not please install and/or understand technology before you begin.
+
+Git: <a href="https://git-scm.com/" target="_blank">https://git-scm.com/</a>
+Node, NPM:  <a href="https://nodejs.org/en" target="_blank">https://nodejs.org/en</a>
+React: <a href="https://react.dev/" target="_blank">https://react.dev/</a>
+Storybook:  <a href="https://storybook.js.org/" target="_blank">https://storybook.js.org/</a>
+Typescript:  <a href="https://www.typescriptlang.org/" target="_blank">https://www.typescriptlang.org/</a>
+
+Command Line:
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Command_line
+
+## NPM INSTALL
+
+Enter the cloned repository in the command line and then run this in the command line:
+
+```npm install```
+
+This will install all the packages necessary for the project. 
+
+### NPM RUN STORYBOOK
+
+Once everything is installed run this in the command line:
+
+```npm run storybook```
+
+This will run the storybook and allow the application to open in a browser with the URL path:
+
+```http://localhost:6006/```
+
+### PROJECT LOCATION
+
+On the left side navigation menu, navigate to the <strong>"Table"</strong> section and then to the <strong>“Select Downloadable Items”</strong> table example and this is the project. 
+
+All other examples found in the navgation are smaller components that help build this component.
+
+### Testing
+
+Expand all sections in the left side navigation menu such as the Anchor, Checkbox, Table, and then click the <strong>“Run tests"</strong> located at the bottom of the left side navigation menu. 
+
+Running the test will test the interaction for each of the components. If green checkmarks are present next beside all of the components, then components are passing interaction.
+
+### Testing Accessibility
+
+If the <strong>"testing module"</strong> expand button is visible, click on the <strong>testing module</strong> button and then check the accessibility checkbox.
+
+Click run test again and if green checkmarks are present next beside all of the components, then components are passing accessibility.
+
+Note: I do not have <strong>"Coverage"</strong> implemented.
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -7,7 +66,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+### Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
