@@ -52,10 +52,10 @@ export const Table = ({
           allAvail.forEach(el => { e.target.checked ? el.closest('tr').classList.add('selected') :   el.closest('tr').classList.remove('selected'); })
           const hint = e.target.checked ? `Selected ${allAvail.length}` : 'None Selected';
           setSelectAllHint(hint);
-          announce( e.target.checked ? `all available items selected, ${hint}` : `all available items deselected, ${hint}`);
+          announce( e.target.checked ? `all available items selected, ${hint}` : `all available items not selected, ${hint}`);
         }}/>
         }
-        {downloadable && <Anchor class="download-comp" label="Download Selected Items" href="/" download onClick={() => {
+        {downloadable && <Anchor tabindex="0" class="download-comp" label="Download Selected Items" href="/" download onClick={() => {
           const selectedItems = getSelected().map(item => item.closest('TR'));
           const arrStrs = selectedItems.map(item => `{device: ${item.querySelector('.device').innerText}, path: ${item.querySelector('.path').innerText}}`);
           const results = selectedItems.length < 1 ? 'No items selected!' : JSON.stringify(arrStrs);
@@ -97,7 +97,7 @@ export const Table = ({
                       case 0:
                         selectAllRef.current.checked = false;
                         setSelectAllHint('None Selected');
-                        announce(`${row.name} deseleted, none selected`);
+                        announce(`${row.name} not selected, none selected`);
                         break;
                       case avail.length:
                         selectAllRef.current.checked = true;
