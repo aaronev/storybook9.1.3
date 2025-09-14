@@ -1,0 +1,27 @@
+table {
+  border: .05rem solid black;
+}
+
+td, th {
+  border: 1px solid black;
+  padding: .5rem;
+  margin: 0 .5rem;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.toolbar {
+  display: flex;
+}
+
+tr.selected {
+  background-color: lightgray;
+}
