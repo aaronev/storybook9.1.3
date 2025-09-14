@@ -44,7 +44,7 @@ export const Checkbox = ({
             onClick={onClick}
             {...props}
           />
-          <span class="checkbox-visual-label" class={invisibleLabel ? "visually-hidden" :  false}>{label}</span>
+          <span class={`${invisibleLabel ? "visually-hidden" : ''} checkbox-visual-label`}>{label}</span>
         </label>
         <div class="hint--container">
             <span id={hintId}>{hint}</span>
