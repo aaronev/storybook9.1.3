@@ -67,7 +67,7 @@ Note: I do not have <strong>"Coverage"</strong> implemented.
 
 The best way to test accessibility is by being the user and testing it with assistive technologies and their compatible browsers JAWS/Chrome, NVDA/FF, and VO/Safari.
 
-Before submission, I had the chance to test this on MacOS VO/Safari, iOS VO/Edge, and NVDA/FF. The component is accessible across all!
+Before submission, I had the chance to test this on MacOS VO/Safari, iOS VO/Safari, and NVDA/FF. The component is accessible across all!
 
 ## React + TypeScript + Vite
 
