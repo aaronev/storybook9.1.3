@@ -1,0 +1,122 @@
+import React from 'react';
+
+import { Checkbox } from '../checkbox/Checkbox';
+import { Anchor } from '../anchor/Anchor';
+
+import './table.css';
+
+export interface TableProps {
+  /**  table's caption content*/
+  caption: string,
+  /**  table's column content*/
+  columns: [],
+  /**  table's data content*/
+  data: [],
+  /**  table's configuration for selectable rows*/
+  selectable: boolean,
+  /**  table's configuration for downloadable rows*/
+  downloadable: boolean,
+}
+
+/** Primary UI component for user interaction */
+export const Table = ({
+  caption,
+  columns,
+  data,
+  selectable,
+  downloadable,
+  ...props
+}: TableProps) => {
+  const tableRef = React.useRef(null);
+  const selectAllRef = React.useRef(null);
+  const announceRef = React.useRef(null);
+  const [selectAllHint, setSelectAllHint] = React.useState('None Selected');
+
+  const announce = (msg) => {
+    announceRef.current.innerText = msg;
+    setTimeout(() => {announceRef.current.innerText = '' }, 500);
+  };
+
+  const getSelected = () => {
+    return [...tableRef.current.querySelectorAll('[type=checkbox]:checked')];
+  };
+
+  return (
+    <div>
+      <div class="toolbar">
+        <span ref={announceRef} class="visually-hidden" aria-live="polite"></span>
+        {
+        selectable && <Checkbox class="select-all-comp" ref={selectAllRef} nameLabel="all available items" hintId="select-all-hint" hint={selectAllHint} label="Select All Available Items" onClick={ (e) => {
+          const allAvail = [...tableRef.current.querySelectorAll('[type=checkbox]:not(:disabled)')];
+          allAvail.forEach(el => el.checked = e.target.checked);
+          const hint = e.target.checked ? `Selected ${allAvail.length}` : 'None Selected';
+          setSelectAllHint(hint);
+          announce( e.target.checked ? `all available items selected, ${hint}` : `all available items deselected, ${hint}`);
+        }}/>
+        }
+        {downloadable && <Anchor class="download-comp" label="Download Selected Items" href="/" download onClick={() => {
+          const selectedItems = getSelected().map(item => item.closest('TR'));
+          const arrStrs = selectedItems.map(item => `{device: ${item.querySelector('.device').innerText}, path: ${item.querySelector('.path').innerText}}`);
+          const results = selectedItems.length < 1 ? 'No items selected!' : JSON.stringify(arrStrs);
+          alert(results);
+        }}/>}
+      </div>
+      <table ref={tableRef} {...props}>
+        <caption>{caption}</caption>
+        <thead><tr>
+          {selectable && <th class="visually-hidden">Select</th>}
+          {columns.map((col) : string | HTMLElement => <th>{col}</th>)}
+        </tr></thead>
+        <tbody>
+          {data.map((row: {}) : HTMLElement => {
+
+            const tdCells = [];
+
+            for (const key in row) {
+              tdCells.push(key);
+            }
+
+            return <tr>
+              { 
+              selectable &&
+                <td>
+                  <Checkbox nameLabel={row.name} ariaLabel={`Select ${row.name} to download`} disabled={row.status !== "available"? true : false}
+                  onClick={(e) : HTMLElement => {
+                    const avail = [...tableRef.current.querySelectorAll('[type=checkbox]:not(:disabled)')];
+                    const checked = getSelected();
+
+                    console.log(avail, avail.length, checked, checked.length);
+                    
+                    selectAllRef.current.indeterminate = false;
+
+                    setSelectAllHint('Selected ' + checked.length);
+                    announce(`${row.name} ${e.target.checked ? 'selected' : 'unselected'}, selected ${checked.length}`);
+
+                    switch (checked.length) {
+                      case 0:
+                        selectAllRef.current.checked = false;
+                        setSelectAllHint('None Selected');
+                        announce(`${row.name} deseleted, none selected`);
+                        break;
+                      case avail.length:
+                        selectAllRef.current.checked = true;
+                        announce(`${row.name} ${e.target.checked ? 'selected' : 'unselected'}, selected ${checked.length}, all available items selected`);
+                        break;
+                      default:
+                        selectAllRef.current.indeterminate = true;
+                        break;
+                    }
+                  }}/>
+                </td>
+              }
+              {
+                tdCells.map(cell => <td className={cell}>{row[cell]}</td>)
+              }
+
+            </tr>
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+};
