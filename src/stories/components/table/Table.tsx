@@ -55,7 +55,7 @@ export const Table = ({
           announce( e.target.checked ? `all available items selected, ${hint}` : `all available items not selected, ${hint}`);
         }}/>
         }
-        {downloadable && <Anchor tabindex="0" class="download-comp" label="Download Selected Items" href="/" download onClick={() => {
+        {downloadable && <Anchor tabindex="0" class="download-comp" label="Download Selected Items" href="#/" download onClick={() => {
           const selectedItems = getSelected().map(item => item.closest('TR'));
           const arrStrs = selectedItems.map(item => `{device: ${item.querySelector('.device').innerText}, path: ${item.querySelector('.path').innerText}}`);
           const results = selectedItems.length < 1 ? 'No items selected!' : JSON.stringify(arrStrs);
