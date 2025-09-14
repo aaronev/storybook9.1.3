@@ -30,7 +30,7 @@ export const Table = ({
   const tableRef = React.useRef(null);
   const selectAllRef = React.useRef(null);
   const announceRef = React.useRef(null);
-  const [selectAllHint, setSelectAllHint] = React.useState('None Selected');
+  const [selectAllHint, setSelectAllHint] = React.useState('No items selected');
 
   const announce = (msg) => {
     announceRef.current.innerText = msg;
@@ -50,7 +50,7 @@ export const Table = ({
           const allAvail = [...tableRef.current.querySelectorAll('[type=checkbox]:not(:disabled)')];
           allAvail.forEach(el => el.checked = e.target.checked);
           allAvail.forEach(el => { e.target.checked ? el.closest('tr').classList.add('selected') :   el.closest('tr').classList.remove('selected'); })
-          const hint = e.target.checked ? `Selected ${allAvail.length}` : 'None Selected';
+          const hint = e.target.checked ? `${allAvail.length} items selected` : 'No items selected';
           setSelectAllHint(hint);
           announce( e.target.checked ? `all available items selected, ${hint}` : `all available items not selected, ${hint}`);
         }}/>
@@ -91,17 +91,17 @@ export const Table = ({
                     selectAllRef.current.indeterminate = false;
 
                     setSelectAllHint('Selected ' + checked.length);
-                    announce(`${row.name} ${e.target.checked ? 'selected' : 'unselected'}, selected ${checked.length}`);
+                    announce(`${row.name} ${e.target.checked ? 'selected' : 'unselected'}, ${checked.length} items selected`);
 
                     switch (checked.length) {
                       case 0:
                         selectAllRef.current.checked = false;
-                        setSelectAllHint('None Selected');
-                        announce(`${row.name} not selected, none selected`);
+                        setSelectAllHint('No items selected');
+                        announce(`${row.name} not selected, No items selected`);
                         break;
                       case avail.length:
                         selectAllRef.current.checked = true;
-                        announce(`${row.name} ${e.target.checked ? 'selected' : 'unselected'}, selected ${checked.length}, all available items selected`);
+                        announce(`${row.name} ${e.target.checked ? 'selected' : 'unselected'}, ${checked.length} items selected, all available items selected`);
                         break;
                       default:
                         selectAllRef.current.indeterminate = true;
