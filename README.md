@@ -63,6 +63,12 @@ Click run test again and if green checkmarks are present next beside all of the 
 
 Note: I do not have <strong>"Coverage"</strong> implemented.
 
+## Best Practicing for Testing Accessibility
+
+The best way to test accessibility is by being the user and testing it with assistive technologies and their compatible browsers JAWS/Chrome, NVDA/FF, and VO/Safari.
+
+Before submission, I had the chance to test this on MacOS VO/Safari, iOS VO/Edge, and NVDA/FF. The component is accessible across all!
+
 ## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
