@@ -32,7 +32,7 @@ export const Primary: Story = {
 
 export const InvisibleLabel: Story = {
   args: {
-    hintId: "select-test-id",
+    hintId: "select-invisible-test-id",
     hint: "clicking will select or deselect checkbox",
     label: 'visually hidden select label',
     invisibleLabel: true,
@@ -41,7 +41,7 @@ export const InvisibleLabel: Story = {
 
 export const Disabled: Story = {
   args: {
-    hintId: "select-test-id",
+    hintId: "select-disabled-test-id",
     hint: "clicking will select or deselect checkbox",
     label: 'Select',
     disabled: true,
