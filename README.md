@@ -2,22 +2,27 @@
 
 ## Clone Repository
 
-```git clone https://github.com/aaronev/storybook9.1.3.git```
-
 Full Disclosure: 
 
 This comes with the assumption that the person cloning the application understands git, node, npm, react, typescript, storybook, and command line.
 
 If not please install and/or understand technology before you begin.
 
-Git: <a href="https://git-scm.com/" target="_blank">https://git-scm.com/</a>
-Node, NPM:  <a href="https://nodejs.org/en" target="_blank">https://nodejs.org/en</a>
-React: <a href="https://react.dev/" target="_blank">https://react.dev/</a>
-Storybook:  <a href="https://storybook.js.org/" target="_blank">https://storybook.js.org/</a>
-Typescript:  <a href="https://www.typescriptlang.org/" target="_blank">https://www.typescriptlang.org/</a>
+<ul>
+  <li><a href="https://git-scm.com/" target="_blank">Git</a></li>
+  <li><a href="https://nodejs.org/en" target="_blank">Node and NPM</a><li>
+  <li><a href="https://react.dev/" target="_blank">React</a><li>
+  <li><a href="https://storybook.js.org/" target="_blank">Storybook</a><li>
+  <li><a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a><li>
+<ul>
 
 Command Line:
 https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Command_line
+
+
+When you are ready run this in the command line:
+
+```git clone https://github.com/aaronev/storybook9.1.3.git```
 
 ## NPM INSTALL
 
@@ -27,7 +32,7 @@ Enter the cloned repository in the command line and then run this in the command
 
 This will install all the packages necessary for the project. 
 
-### NPM RUN STORYBOOK
+## NPM RUN STORYBOOK
 
 Once everything is installed run this in the command line:
 
@@ -37,19 +42,19 @@ This will run the storybook and allow the application to open in a browser with 
 
 ```http://localhost:6006/```
 
-### PROJECT LOCATION
+## PROJECT LOCATION
 
 On the left side navigation menu, navigate to the <strong>"Table"</strong> section and then to the <strong>“Select Downloadable Items”</strong> table example and this is the project. 
 
 All other examples found in the navgation are smaller components that help build this component.
 
-### Testing
+## Testing
 
 Expand all sections in the left side navigation menu such as the Anchor, Checkbox, Table, and then click the <strong>“Run tests"</strong> located at the bottom of the left side navigation menu. 
 
 Running the test will test the interaction for each of the components. If green checkmarks are present next beside all of the components, then components are passing interaction.
 
-### Testing Accessibility
+## Testing Accessibility
 
 If the <strong>"testing module"</strong> expand button is visible, click on the <strong>testing module</strong> button and then check the accessibility checkbox.
 
