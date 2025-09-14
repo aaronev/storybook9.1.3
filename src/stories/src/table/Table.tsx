@@ -46,7 +46,7 @@ export const Table = ({
       <div class="toolbar">
         <span ref={announceRef} class="visually-hidden" aria-live="polite"></span>
         {
-        selectable && <Checkbox class="select-all-comp" ref={selectAllRef} nameLabel="all available items" hintId="select-all-hint" hint={selectAllHint} label="Select All Available Items" onClick={ (e) => {
+        selectable && <Checkbox class="select-all-comp" ref={selectAllRef} hintId="select-all-hint" hint={selectAllHint} label="Select All Available Items" onClick={ (e) => {
           const allAvail = [...tableRef.current.querySelectorAll('[type=checkbox]:not(:disabled)')];
           allAvail.forEach(el => el.checked = e.target.checked);
           allAvail.forEach(el => { e.target.checked ? el.closest('tr').classList.add('selected') :   el.closest('tr').classList.remove('selected'); })
@@ -81,7 +81,7 @@ export const Table = ({
               { 
               selectable &&
                 <td>
-                  <Checkbox nameLabel={row.name} ariaLabel={`Select ${row.name} to download`} disabled={row.status !== "available"? true : false}
+                  <Checkbox title={row.status !== "available" ? 'Disabled Selection' :`Select ${row.name} to download`} ariaLabel={`Select ${row.name} to download`} disabled={row.status !== "available"? true : false}
                   onClick={(e) => {
                     const avail = [...tableRef.current.querySelectorAll('[type=checkbox]:not(:disabled)')];
                     const checked = getSelected();
