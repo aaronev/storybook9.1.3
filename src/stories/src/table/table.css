@@ -21,3 +21,7 @@ td, th {
 .toolbar {
   display: flex;
 }
+
+tr.selected {
+  background-color: lightgray;
+}

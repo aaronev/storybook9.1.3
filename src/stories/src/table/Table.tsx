@@ -49,6 +49,7 @@ export const Table = ({
         selectable && <Checkbox class="select-all-comp" ref={selectAllRef} nameLabel="all available items" hintId="select-all-hint" hint={selectAllHint} label="Select All Available Items" onClick={ (e) => {
           const allAvail = [...tableRef.current.querySelectorAll('[type=checkbox]:not(:disabled)')];
           allAvail.forEach(el => el.checked = e.target.checked);
+          allAvail.forEach(el => { e.target.checked ? el.closest('tr').classList.add('selected') :   el.closest('tr').classList.remove('selected'); })
           const hint = e.target.checked ? `Selected ${allAvail.length}` : 'None Selected';
           setSelectAllHint(hint);
           announce( e.target.checked ? `all available items selected, ${hint}` : `all available items deselected, ${hint}`);
@@ -81,11 +82,11 @@ export const Table = ({
               selectable &&
                 <td>
                   <Checkbox nameLabel={row.name} ariaLabel={`Select ${row.name} to download`} disabled={row.status !== "available"? true : false}
-                  onClick={(e) : HTMLElement => {
+                  onClick={(e) => {
                     const avail = [...tableRef.current.querySelectorAll('[type=checkbox]:not(:disabled)')];
                     const checked = getSelected();
-
-                    console.log(avail, avail.length, checked, checked.length);
+                    
+                    e.target.checked ? e.target.closest('tr').classList.add('selected') :  e.target.closest('tr').classList.remove('selected')
                     
                     selectAllRef.current.indeterminate = false;
 
