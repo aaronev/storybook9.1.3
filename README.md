@@ -19,9 +19,7 @@ If not please install and/or understand technology before you begin.
   <li><a href="https://react.dev/" target="_blank">React</a></li>
   <li><a href="https://storybook.js.org/" target="_blank">Storybook</a></li>
   <li><a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a></li>
-<ul>
-
-
+</ul>
 
 When you are ready run this in the command line:
 
