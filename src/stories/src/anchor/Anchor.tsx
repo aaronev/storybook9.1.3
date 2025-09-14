@@ -11,8 +11,6 @@ export interface AnchorProps {
   hintId: string;
   /** anchor's visual description content*/
   hint: string;
-  /** anchor's download configuration*/
-  download: boolean;
   /** anchor's aria-label content*/
   ariaLabel: string;
 };

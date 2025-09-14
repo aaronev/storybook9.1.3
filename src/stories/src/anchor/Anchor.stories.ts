@@ -15,7 +15,6 @@ const meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
 } satisfies Meta<typeof Anchor>;
 
 export default meta;
@@ -40,7 +39,7 @@ export const Downloadable: Story = {
     label: 'Download',
     download: true,
     ariaLabel: "download xyz",
-    hintId: "test-id",
-    hint: "this link will redirect users to google.com"
+    hintId: "test-download-id",
+    hint: "this will trigger alert and open dialog"
   },
 };
