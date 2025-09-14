@@ -25,3 +25,13 @@ td, th {
 tr.selected {
   background-color: lightgray;
 }
+
+tr:hover {
+  background-color: rgb(228, 219, 219);
+  cursor: pointer;
+}
+
+tr.disabled:hover {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
