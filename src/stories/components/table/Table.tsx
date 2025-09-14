@@ -77,7 +77,11 @@ export const Table = ({
               tdCells.push(key);
             }
 
-            return <tr class={row.status !== "available" ? "disabled": ""}onClick={(e) => { e.target.closest('tr').querySelector('[type=checkbox]').click(); }}>
+            return <tr class={row.status !== "available" ? "disabled": ""}onClick={(e) => { 
+                if (e.target.type !== 'checkbox') {
+                  e.target.closest('tr').querySelector('[type=checkbox]').click(); 
+                };
+              }}>
               { 
               selectable &&
                 <td>
