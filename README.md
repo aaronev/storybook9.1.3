@@ -53,11 +53,17 @@ All other examples found in the navgation are smaller components that help build
 
 Expand all sections in the left side navigation menu such as the Anchor, Checkbox, Table, and then click the <strong>“Run tests"</strong> located at the bottom of the left side navigation menu. 
 
+<img width="1422" height="793" alt="Screenshot 2025-09-13 at 10 36 00 PM" src="https://github.com/user-attachments/assets/a0a3fac9-a67b-4ecc-93d2-4c3c70c1aa69" />
+
+<img width="280" height="99" alt="Screenshot 2025-09-13 at 10 37 22 PM" src="https://github.com/user-attachments/assets/197bf7cd-cb00-48a0-a7b8-eed6ed86d2e0" />
+
 Running the test will test the interaction for each of the components. If green checkmarks are present next beside all of the components, then components are passing interaction.
 
 ## Testing Accessibility
 
 If the <strong>"testing module"</strong> expand button is visible, click on the <strong>testing module</strong> button and then check the accessibility checkbox.
+
+<img width="324" height="296" alt="Screenshot 2025-09-13 at 10 37 06 PM" src="https://github.com/user-attachments/assets/cda0382f-c2f2-405e-ad04-a8025cfa8bc8" />
 
 Click run test again and if green checkmarks are present next beside all of the components, then components are passing accessibility.
 
