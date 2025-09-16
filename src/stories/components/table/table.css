@@ -1,11 +1,20 @@
 table {
-  border: .05rem solid black;
+  border-collapse: collapse;
 }
 
 td, th {
-  border: 1px solid black;
-  padding: .5rem;
-  margin: 0 .5rem;
+  padding: 1rem;
+  border-top: .05rem solid black;
+  margin: 0;
+}
+
+*:focus {
+  outline: 2px solid green;
+  outline-offset: 2px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ebf3fcca; /* Light grey background for even rows */
 }
 
 .visually-hidden {
@@ -20,6 +29,13 @@ td, th {
 
 .toolbar {
   display: flex;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.toolbar > * {
+  width: 100%;
+  padding: 1rem;
 }
 
 .selectable-table tr.selected {
@@ -34,4 +50,18 @@ td, th {
 .selectable-table tbody tr.disabled:hover {
   cursor: not-allowed;
   pointer-events: all !important;
+}
+
+.available {
+  display: flex;
+  line-height: 0;
+}
+
+.available-dot {
+  color: rgb(0, 184, 0); 
+  font-size: 35px;
+}
+
+.table-container {
+  border: 1px solid black;
 }

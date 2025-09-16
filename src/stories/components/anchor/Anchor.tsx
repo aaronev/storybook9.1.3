@@ -25,12 +25,22 @@ export const Anchor = ({
 }: AnchorProps) => {
   return (
     <div class="anchor--container">
+      {
+      props.download &&
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+      }
+
       <a 
         {...props}
         title={hint}
         aria-label={ariaLabel}
         aria-describedby={hintId}
       >
+      {
+      props.download &&
+        <i class="fa fa-download" aria-hidden="true"></i>
+      }
+
         {label}
       </a>
       <div id={hintId} class="visually-hidden">{hint}</div>
